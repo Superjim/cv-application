@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Profile from "./Profile";
 import Summary from "./Summary";
 import Confirm from "./Confirm";
-import Experience from "./Experience";
+import ExperiencePage from "./ExperiencePage";
 
 export class Form extends Component {
   state = {
@@ -77,7 +77,7 @@ export class Form extends Component {
 
       case 3:
         return (
-          <Experience
+          <ExperiencePage
             nextStep={this.nextStep}
             previousStep={this.previousStep}
             handleChange={this.handleChange}
