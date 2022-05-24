@@ -1,0 +1,17 @@
+.summary-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.textarea-summary {
+  height: 50vh;
+  width: 50vw;
+  resize: none;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
