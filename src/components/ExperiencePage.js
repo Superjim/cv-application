@@ -1,4 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, useContext } from "react";
+import ExperienceForm from "./ExperienceForm";
+import ExperienceContext from "../context/ExperienceContext";
 
 class ExperiencePage extends Component {
   continue = (e) => {
@@ -16,31 +18,12 @@ class ExperiencePage extends Component {
   render() {
     const { values, handleChange } = this.props;
 
+    const { jobs } = useContext(ExperienceContext);
+
     return (
       <div>
-        <h1>Work Experience</h1>
-        <div className="experience-container">
-          <label>
-            Job Title:
-            <input name="title" type="text" placeholder="Job Title" />
-          </label>
-          <br></br>
-          <label>
-            Company:
-            <input name="company" type="text" placeholder="Company" />
-          </label>
-          <br></br>
-          <label>
-            Start Date:
-            <input name="start" type="date" />
-          </label>
-          <label>
-            End Date:
-            <input name="end" type="date" />
-          </label>
-          <br></br>
-          <input type="submit" value="Add Experience" />
-        </div>
+        <div className="experience-container"></div>
+        <ExperienceForm />
         <div className="button-container">
           <button onClick={this.previous}>Previous</button>
           <button onClick={this.continue}>Continue</button>

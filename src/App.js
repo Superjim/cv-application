@@ -5,6 +5,12 @@ import "./App.css";
 
 function App() {
   const [popupDisplay, setPopupDisplay] = useState(false);
+  const [jobs, updateJobs] = useState([]);
+
+  const addJob = (jobInfo) => {
+    updateJobs([...jobs, jobInfo]);
+  };
+  console.log(jobs);
 
   return (
     <div className="App">

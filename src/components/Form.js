@@ -3,17 +3,21 @@ import Profile from "./Profile";
 import Summary from "./Summary";
 import Confirm from "./Confirm";
 import ExperiencePage from "./ExperiencePage";
+import { ExperienceProvider } from "../context/ExperienceContext";
 
 export class Form extends Component {
   state = {
     step: 1,
+
+    //profile
     firstName: "",
     lastName: "",
     location: "",
     email: "",
     phone: "",
+
+    //summary
     summary: "",
-    experience: [],
   };
 
   nextStep = () => {
@@ -77,12 +81,14 @@ export class Form extends Component {
 
       case 3:
         return (
-          <ExperiencePage
-            nextStep={this.nextStep}
-            previousStep={this.previousStep}
-            handleChange={this.handleChange}
-            values={values}
-          />
+          <ExperienceProvider>
+            <ExperiencePage
+              nextStep={this.nextStep}
+              previousStep={this.previousStep}
+              handleChange={this.handleChange}
+              values={values}
+            />
+          </ExperienceProvider>
         );
 
       case 4:
